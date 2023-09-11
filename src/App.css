@@ -1,0 +1,147 @@
+:root {
+  --blue: #297fe5;
+  --black: #1a1b21;
+  --dark-black: #0e0f15;
+  --gray: #4a4e74;
+  --dark-blue: #2b283a;
+  --orange: #f47d27;
+  --white: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yu Gothic", sans-serif;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+  padding-block: 5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  max-width: 300px;
+}
+
+.dark > .card-body {
+  background-color: var(--dark-black);
+  color: var(--white);
+}
+
+.light > .card-body {
+  background-color: var(--white);
+  color: var(--dark-black);
+}
+
+.card > img {
+  border-radius: 10px 10px 0 0;
+}
+
+:where(.card > img, .card-body):hover {
+  cursor: pointer;
+}
+
+.card--name {
+  font-size: 1.4em;
+}
+
+.card--job {
+  font-size: 1em;
+  color: var(--orange);
+}
+
+.card--website {
+  font-size: 0.8em;
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card--website:hover {
+  text-decoration: underline;
+}
+
+.info {
+  text-align: center;
+  margin-block: 1em;
+}
+
+.contact {
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.contact > * {
+  width: 50%;
+  background-color: var(--white);
+  font-size: 1em;
+  color: var(--dark-black);
+  text-decoration: none;
+  padding: 0.3em 1em;
+  border-radius: 0.3em;
+  text-align: center;
+}
+
+.light .email-btn {
+  border: 1px solid var(--gray);
+}
+
+.linkedin-btn {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.about,
+.interests {
+  margin-inline: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+:where(.about, .interests) > .title {
+  font-size: 1.3em;
+}
+
+:where(.about, .interests) > p {
+  font-size: 0.8em;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.dark .socials {
+  background-color: var(--black);
+}
+
+.light .socials {
+  background-color: rgb(221, 212, 212);
+}
+
+.socials > li {
+  list-style-type: none;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--gray);
+}
